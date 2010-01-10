@@ -9,16 +9,16 @@ describe RegistrationsController do
 
   it "should render the index page" do
     get :index
-    response.should have_text(/Rails Bootcamp/)
   end
 
   it "should render the new registration page" do
     get :new
-    response.should have_text(/Register/)
   end
 
   it "should create a new registration on create" do
-    Registration.should_receive(:save)
+    registration = Registration.new(:name => "Bob", :email => "bob@bob.com")
+    Registration.should_receive(:new).and_return(registration)
+    registration.should_receive(:save)
     post :create, {:registration => {:name => "Bob", :email => "bob@bob.com"}}
   end
 

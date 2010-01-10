@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :registrations
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -15,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 
-  # Sample resource route with sub-resources:
+  # Sample resource route with sub-resources:urckkgg
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
   
   # Sample resource route with more complex sub-resources
