@@ -1,0 +1,30 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO "attendees" ("name", "interests", "created_at", "updated_at", "email") VALUES(NULL, NULL, '2010-01-10 02:17:01.996076', '2010-01-10 02:17:01.996076', NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "registrations" ("comment", "created_at", "attendee_id", "event_id", "updated_at", "commitment_strength") VALUES(NULL, '2010-01-10 02:17:02.135235', NULL, NULL, '2010-01-10 02:17:02.135235', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(NULL, NULL, '2010-01-10 02:17:02.149575', '2010-01-10 02:17:02.149575', NULL, NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(E'Rails woot!', NULL, '2010-01-10 02:17:02.168728', '2010-01-10 02:17:02.168728', NULL, NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing EventsController#index (for 0.0.0.0 at 2010-01-10 15:17:02) [GET]
+Rendering events/index
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
