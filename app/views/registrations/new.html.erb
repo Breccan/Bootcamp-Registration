@@ -1,0 +1,20 @@
+<%form_for @registration, :method => :post do |f| %>
+
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email, "Email:" %>
+  <%= f.text_field :email %>
+
+  <%= f.label :os, "What OS are you using?:" %>
+  <%= f.text_field :os %>
+  
+  <%= f.label :organisation, "Organisation:" %>
+  <%= f.text_field :organisation %>
+  
+  <%= f.label :comment, "Any particular interests or requests?:" %>
+  <%= f.text_field :comment %>
+
+  <%= submit_tag %>
+
+<% end %>

@@ -22,18 +22,13 @@ ActiveRecord::Schema.define(:version => 20100110021111) do
   end
 
   create_table "registrations", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "organisation"
     t.integer  "attendee_id"
     t.integer  "event_id"
     t.text     "comment"
     t.integer  "commitment_strength"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "interests"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

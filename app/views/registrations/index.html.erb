@@ -1,0 +1,11 @@
+<%= link_to "Register", new_registration_path %>
+<% unless @registrations.blank? %>
+<table>
+  <tr> 
+    <td> Name </td>
+    <td> Organisation </td>
+    <td> comment </td>
+  </tr>
+  <%= render :partial => :registration, :collection => @registrations %>
+</table>
+<% end %>

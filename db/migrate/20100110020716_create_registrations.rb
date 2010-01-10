@@ -1,7 +1,10 @@
 class CreateRegistrations < ActiveRecord::Migration
   def self.up
     create_table :registrations do |t|
-      t.integer :attendee_id
+      t.string :name
+      t.string :email
+      t.string :organisation
+      t.string :os
       t.integer :event_id
       t.text :comment
       t.integer :commitment_strength
