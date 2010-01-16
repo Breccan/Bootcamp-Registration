@@ -305,3 +305,49 @@ Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/registrations?regis
   [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
   [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RegistrationsController#index (for 0.0.0.0 at 2010-01-17 01:32:04) [GET]
+  [4;35;1mEvent Load (178.7ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (8.9ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering registrations/index
+Completed in 196ms (View: 1, DB: 189) | 200 OK [http://test.host/registrations]
+  [4;35;1mSQL (1.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RegistrationsController#new (for 0.0.0.0 at 2010-01-17 01:32:04) [GET]
+Rendering registrations/new
+Completed in 110ms (View: 1, DB: 2) | 200 OK [http://test.host/registrations/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RegistrationsController#create (for 0.0.0.0 at 2010-01-17 01:32:05) [POST]
+  Parameters: {"registration"=>{"name"=>"Bob", "email"=>"bob@bob.com"}}
+Rendering registrations/new
+Completed in 1ms (View: 1, DB: 1) | 200 OK [http://test.host/registrations?registration%5Bemail%5D=bob%40bob.com&registration%5Bname%5D=Bob]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (18.5ms)[0m   [0;1mINSERT INTO "registrations" ("name", "comment", "created_at", "attendee_id", "event_id", "updated_at", "commitment_strength", "organisation", "email") VALUES(NULL, NULL, '2010-01-16 12:32:05.031383', NULL, NULL, '2010-01-16 12:32:05.031383', NULL, NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(NULL, NULL, '2010-01-16 12:32:05.224873', '2010-01-16 12:32:05.224873', NULL, NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m

@@ -203,3 +203,1138 @@ Migrating to CreateEvents (20100110021111)
   [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100110021111')[0m
   [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100110020716')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:34:45) [GET]
+Rendering registrations/new
+
+ActionView::TemplateError (undefined method `os' for #<Registration:0xb730a540>) on line #10 of app/views/registrations/new.html.erb:
+7:   <%= f.text_field :email %>
+8: 
+9:   <%= f.label :os, "What OS are you using?:" %>
+10:   <%= f.text_field :os %>
+11:   
+12:   <%= f.label :organisation, "Organisation:" %>
+13:   <%= f.text_field :organisation %>
+
+    app/views/registrations/new.html.erb:10
+    app/views/registrations/new.html.erb:1
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (10.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRegistrations (20100110020716)
+Migrating to CreateEvents (20100110021111)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:35:00) [GET]
+Rendering registrations/new
+
+ActionView::TemplateError (undefined method `os' for #<Registration:0xb5cee950>) on line #10 of app/views/registrations/new.html.erb:
+7:   <%= f.text_field :email %>
+8: 
+9:   <%= f.label :os, "What OS are you using?:" %>
+10:   <%= f.text_field :os %>
+11:   
+12:   <%= f.label :organisation, "Organisation:" %>
+13:   <%= f.text_field :organisation %>
+
+    app/views/registrations/new.html.erb:10
+    app/views/registrations/new.html.erb:1
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (69.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (15.2ms)[0m   [0;1mCREATE TABLE "events" ("id" serial primary key, "name" character varying(255), "description" text, "start_date" date, "end_date" date, "time" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE TABLE "registrations" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "organisation" character varying(255), "attendee_id" integer, "event_id" integer, "comment" text, "commitment_strength" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100110021111')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100110020716')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(E'Rails Bootcamp', '2010-03-13', '2010-01-16 12:39:19.350402', '2010-01-16 12:39:19.350402', NULL, E'An introduction to rails', NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(E'Rails Bootcamp', '2010-03-13', '2010-01-16 12:39:28.084688', '2010-01-16 12:39:28.084688', NULL, E'An introduction to rails', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:39:30) [GET]
+Rendering registrations/new
+
+ActionView::TemplateError (undefined method `os' for #<Registration:0xb5e35f20>) on line #15 of app/views/registrations/new.html.erb:
+12:   <%= f.text_field :email %>
+13: 
+14:   <%= f.label :os, "What OS are you using?:" %>
+15:   <%= f.text_field :os %>
+16:   
+17:   <%= f.label :organisation, "Organisation:" %>
+18:   <%= f.text_field :organisation %>
+
+    app/views/registrations/new.html.erb:15
+    app/views/registrations/new.html.erb:6
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (55.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (14.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRegistrations (20100110020716)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (46.2ms)[0m   [0;1mCREATE TABLE "registrations" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "organisation" character varying(255), "os" character varying(255), "event_id" integer, "comment" text, "commitment_strength" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100110020716')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateEvents (20100110021111)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (33.7ms)[0m   [0;1mCREATE TABLE "events" ("id" serial primary key, "name" character varying(255), "description" text, "start_date" date, "end_date" date, "time" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100110021111')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(E'Rails Bootcamp', '2010-03-13', '2010-01-16 12:40:54.672519', '2010-01-16 12:40:54.672519', NULL, E'An introduction to rails', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:40:55) [GET]
+Rendering registrations/new
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:41:56) [GET]
+Rendering registrations/new
+Completed in 29ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-17 01:42:30) [GET]
+
+ActionController::RoutingError (No route matches "/registrationgs" with {:method=>:get}):
+  /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+  /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+  /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 01:42:34) [GET]
+  [4;36;1mEvent Load (1.3ms)[0m   [0;1mSELECT * FROM "events" LIMIT 1[0m
+  [4;35;1mRegistration Load (0.5ms)[0m   [0mSELECT * FROM "registrations" [0m
+Rendering registrations/index
+Completed in 95ms (View: 75, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:42:37) [GET]
+Rendering registrations/new
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://localhost/registrations/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:42:44) [GET]
+Rendering registrations/new
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/registrations/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 01:45:59) [GET]
+  [4;36;1mEvent Load (1.3ms)[0m   [0;1mSELECT * FROM "events" LIMIT 1[0m
+  [4;35;1mRegistration Load (1.0ms)[0m   [0mSELECT * FROM "registrations" [0m
+Rendering registrations/index
+Completed in 22ms (View: 6, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:46:23) [GET]
+Rendering registrations/new
+Completed in 35ms (View: 17, DB: 0) | 200 OK [http://localhost/registrations/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2010-01-17 01:46:47) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"+orChUXEx+JJ9JIiZJ4cdUfApGWlq5XjriRfrcgsAkY=", "registration"=>{"comment"=>"There should be cake.", "name"=>"Breccan", "os"=>"ubuntu", "organisation"=>"3months", "email"=>"breccan@3months.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "registrations" ("name", "comment", "created_at", "event_id", "updated_at", "os", "commitment_strength", "organisation", "email") VALUES(E'Breccan', E'There should be cake.', '2010-01-16 12:46:47.770871', 1, '2010-01-16 12:46:47.770871', E'ubuntu', NULL, E'3months', E'breccan@3months.com') RETURNING "id"[0m
+  [4;36;1mSQL (9.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/registrations
+Completed in 33ms (DB: 11) | 302 Found [http://localhost/registrations]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 01:46:47) [GET]
+  [4;35;1mEvent Load (2.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (1.4ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering registrations/index
+
+ActionView::TemplateError (undefined method `include?' for :registration:Symbol) on line #12 of app/views/registrations/index.html.erb:
+9:       <td> Organisation </td>
+10:       <td> Comment </td>
+11:     </tr>
+12:     <%= render :partial => :registration, :collection => @registrations %>
+13:   </table>
+14: <% end %>
+
+    app/views/registrations/index.html.erb:12
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (118.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 01:48:13) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (1.0ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering registrations/index
+Rendered registrations/_registration (8.2ms)
+Completed in 33ms (View: 19, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 01:53:26) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.8ms)
+Completed in 38ms (View: 24, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 01:53:29) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 29ms (View: 15, DB: 0) | 200 OK [http://localhost/registrations/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 01:59:04) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.5ms)
+Completed in 22ms (View: 8, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:00:58) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 22ms (View: 8, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (5.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:02:07) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.8ms)
+Completed in 89ms (View: 16, DB: 7) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:03:06) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.9ms)
+Completed in 23ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:03:19) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (2.1ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.0ms)
+Completed in 24ms (View: 9, DB: 4) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:04:13) [GET]
+  [4;35;1mEvent Load (2.1ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (7.3ms)
+Completed in 25ms (View: 10, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:04:31) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.7ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.6ms)
+Completed in 24ms (View: 10, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:04:33) [GET]
+  [4;35;1mEvent Load (1.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (1.4ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (10.2ms)
+Completed in 28ms (View: 13, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:05:04) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (2.1ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.5ms)
+Completed in 23ms (View: 8, DB: 12) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:05:09) [GET]
+  [4;35;1mEvent Load (2.0ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.9ms)
+Completed in 24ms (View: 9, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:05:10) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (1.0ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.1ms)
+Completed in 25ms (View: 9, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:05:10) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (6.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.7ms)
+Completed in 31ms (View: 10, DB: 8) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:05:29) [GET]
+  [4;35;1mEvent Load (1.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.5ms)
+Completed in 26ms (View: 8, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:05:30) [GET]
+  [4;35;1mEvent Load (6.9ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 29ms (View: 9, DB: 8) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:06:04) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.4ms)
+Completed in 23ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:07:08) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.5ms)
+Completed in 22ms (View: 8, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (4.8ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:07:37) [GET]
+  [4;35;1mEvent Load (2.6ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (8.2ms)
+Completed in 27ms (View: 11, DB: 8) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:07:52) [GET]
+  [4;35;1mEvent Load (3.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 25ms (View: 9, DB: 4) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:07:53) [GET]
+  [4;35;1mEvent Load (1.6ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.2ms)
+Completed in 25ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:08:09) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 22ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:08:34) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:19:48) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:20:16) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:20:23) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:21:55) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 43ms (View: 23, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:22:01) [GET]
+  [4;35;1mEvent Load (2.9ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 25ms (View: 9, DB: 4) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:22:34) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 22ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:27:42) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.1ms)
+Completed in 28ms (View: 14, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:28:35) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.4ms)
+Completed in 24ms (View: 10, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:29:19) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.1ms)
+Completed in 25ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:29:45) [GET]
+  [4;35;1mEvent Load (1.9ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (3.7ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 27ms (View: 9, DB: 6) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:30:02) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 24ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:30:03) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 23ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:30:05) [GET]
+  [4;35;1mEvent Load (2.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 24ms (View: 9, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:30:21) [GET]
+  [4;35;1mEvent Load (1.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.5ms)
+Completed in 23ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:30:41) [GET]
+  [4;35;1mEvent Load (2.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 23ms (View: 9, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:30:44) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.0ms)
+Completed in 24ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:31:13) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 23ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:34:05) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 33ms (View: 19, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:34:18) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.8ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 28ms (View: 14, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:34:18) [GET]
+  [4;35;1mEvent Load (9.0ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 30ms (View: 9, DB: 10) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:34:19) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.7ms)
+Completed in 23ms (View: 10, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:34:39) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (1.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.9ms)
+Completed in 25ms (View: 9, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:34:48) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.7ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 24ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:35:14) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 29ms (View: 15, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:35:28) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (7.7ms)
+Completed in 30ms (View: 16, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:38:06) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.4ms)
+
+ActionView::TemplateError (registration_url failed to generate from {:controller=>"registrations", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["registrations", :id] - are they all satisfied?) on line #32 of app/views/layouts/application.html.erb:
+29:         </div>
+30:         <div id="right_column">
+31:           <p> <%= link_to_unless_current "Register", new_registration_path %> <p> 
+32:           <p> <%= link_to_unless_current "Who's registered", registration_path %> <p> 
+33:           <p> Check out the source for this page at <%= link_to "github", "http://github.com/Breccan/Bootcamp-Registration.git" %>. <p> 
+34:         </div>
+35:       </div>
+
+    (eval):16:in `registration_path'
+    app/views/layouts/application.html.erb:32
+    /usr/lib/ruby/1.8/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `each'
+    /usr/lib/ruby/1.8/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:285:in `run'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `new'
+    /usr/lib/ruby/1.8/mongrel.rb:268:in `run'
+
+Rendered rescues/_trace (124.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:38:22) [GET]
+  [4;35;1mEvent Load (9.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (8.2ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (10.4ms)
+Completed in 51ms (View: 20, DB: 18) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:39:01) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 24ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:39:28) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.8ms)
+Completed in 28ms (View: 15, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:40:04) [GET]
+  [4;35;1mEvent Load (2.9ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 29ms (View: 14, DB: 4) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:41:00) [GET]
+  [4;35;1mEvent Load (1.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.0ms)
+Completed in 90ms (View: 77, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:42:27) [GET]
+  [4;35;1mEvent Load (1.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (3.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (7.0ms)
+Completed in 29ms (View: 11, DB: 5) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:42:28) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (3.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.7ms)
+Completed in 28ms (View: 10, DB: 5) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:44:36) [GET]
+  [4;35;1mEvent Load (2.4ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.9ms)
+Completed in 29ms (View: 14, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:44:47) [GET]
+  [4;35;1mEvent Load (4.6ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (1.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.6ms)
+Completed in 27ms (View: 9, DB: 7) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:45:59) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (9.8ms)
+Completed in 32ms (View: 18, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:46:38) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.5ms)
+Completed in 26ms (View: 9, DB: 5) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:46:47) [GET]
+  [4;35;1mEvent Load (1.3ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.8ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (6.1ms)
+Completed in 24ms (View: 10, DB: 3) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2010-01-17 02:47:01) [GET]
+  [4;35;1mEvent Load (1.5ms)[0m   [0mSELECT * FROM "events" LIMIT 1[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM "registrations" [0m
+Rendering template within layouts/application
+Rendering registrations/index
+Rendered registrations/_registration (5.7ms)
+Completed in 25ms (View: 9, DB: 2) | 200 OK [http://localhost/registrations]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:47:07) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:48:25) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 27ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:48:45) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 26ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:49:16) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 28ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:51:38) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 86ms (View: 75, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:52:01) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:53:47) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:54:53) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 28ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 02:55:55) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 25ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRegistrations (20100110020716)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mCREATE TABLE "registrations" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "organisation" character varying(255), "os" character varying(255), "help" boolean, "event_id" integer, "comment" text, "commitment_strength" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100110020716')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateEvents (20100110021111)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE "events" ("id" serial primary key, "name" character varying(255), "description" text, "start_date" date, "end_date" date, "time" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100110021111')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "events" ("name", "start_date", "created_at", "updated_at", "time", "description", "end_date") VALUES(E'Rails Bootcamp', '2010-03-13', '2010-01-16 14:01:22.027292', '2010-01-16 14:01:22.027292', NULL, E'An introduction to rails', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:01:25) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 29ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:01:48) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 28ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:01:50) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 85ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:02:07) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 30ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:08:49) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 35ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:13:02) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:14:55) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 27ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:15:47) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:20:31) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 96ms (View: 85, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:20:43) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 31ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:22:35) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 30ms (View: 19, DB: 0) | 200 OK [http://localhost/]

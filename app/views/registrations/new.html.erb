@@ -1,20 +1,34 @@
+
+<div class="blurb">
+  <p><h1> Learn Ruby on Rails! </h1><p>
+
+  <p> <%= link_to "Ruby on Rails", "http://rubyonrails.org" %> is a framework quickly growing in popularity. It's certainly worth your time to learn more about it. </p>
+  <p>The Wellington Rails Bootcamp will occur on the 13th of March 2010. It's a free event being put on by the already vibrant Wellington Rails community. </p>
+  <p>If you want to get a head start check out the links on the right, including a link to the source for this site(feel free to fork it and make it pretty). </p>
+</div>
+
+<div class="register">
+  <h3> Register now! </h3>
 <%form_for @registration, :method => :post do |f| %>
 
-  <%= f.label :name, "Name:" %>
-  <%= f.text_field :name %>
+  <p>  <%= f.label :name, "Name:" %> 
+  <%= f.text_field :name %></p.>
 
-  <%= f.label :email, "Email:" %>
-  <%= f.text_field :email %>
+  <p><%= f.label :email, "Email:" %>
+  <%= f.text_field :email %></p>
 
-  <%= f.label :os, "What OS are you using?:" %>
-  <%= f.text_field :os %>
+
+  <p><%= f.label :help, "Do you need help setting up Rails on your Machine?" %> </p>
+  <p>Yes <%= f.radio_button :help, "yes" %> 
+  No <%= f.radio_button :help, "no" %></p>
+
+  <p><%= f.label :os, "What OS are you using?" %>
+  <%= f.text_field :os %></p>
   
-  <%= f.label :organisation, "Organisation:" %>
-  <%= f.text_field :organisation %>
-  
-  <%= f.label :comment, "Any particular interests or requests?:" %>
-  <%= f.text_field :comment %>
+  <p><%= f.label :comment, "Any particular interests or requests?:" %></p>
+  <p><%= f.text_area :comment, :rows => 7, :cols => 80 %> </p>
 
-  <%= submit_tag %>
+  <p><%= submit_tag %></p>
 
 <% end %>
+</div>

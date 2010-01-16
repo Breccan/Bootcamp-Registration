@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(@title || "Wellington Rails Bootcamp") %></title>
+    <%= stylesheet_link_tag 'reset', 'application', 'forms' %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <!--[if lte IE 7]>
+      <h1>You are using an old version of Internet Explorer.</h1>
+      <p>Internet Explorer is very old, and doesn't support many of the modern web technologies we use n this site.</p>
+      
+      <p>While the site may be usable for you, we do not test this and make no guarantees. We highly recommend
+      upgrading to Firefox or Google Chrome for a safer, faster, prettier browsing experience.</p>
+    <![endif]-->
+    <div id="container">
+      <div id="header" class="clearfix">
+        <h1><%= link_to(h(@title), root_url) %></h1>
+        
+      </div>
+      
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+      <div id="content" >
+        <div class="clearfix">
+          <div id="body">
+            <%= yield %>
+          </div>
+          <div id="right_column">
+            <p> <%= link_to_unless_current "Register", new_registration_path %> <p> 
+            <p> <%= link_to_unless_current "Who's registered", registrations_path %> <p> 
+            <p> Check out the source for this page at <%= link_to "github", "http://github.com/Breccan/Bootcamp-Registration" %>. <p> 
+            <p> <%= link_to "Ruby on Rails", "http://rubyonrails.org/" %> </p>
+            <p> <%= link_to "Ruby", "http://www.ruby-lang.org/en/" %> </p>
+            <p> <%= link_to "Rails Guides", "http://guides.rubyonrails.org/" %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

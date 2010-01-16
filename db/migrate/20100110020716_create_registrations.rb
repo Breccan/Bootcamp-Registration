@@ -5,6 +5,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :email
       t.string :organisation
       t.string :os
+      t.boolean :help
       t.integer :event_id
       t.text :comment
       t.integer :commitment_strength
