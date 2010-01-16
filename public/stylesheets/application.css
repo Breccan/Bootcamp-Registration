@@ -20,7 +20,7 @@ td, tr, table { border: 1px solid black; }
 #user_dashboard li span { float: right; text-align: right; font-size: 0.9em; display: block; }
 
 #content { margin: 0px auto; width: 950px; border: 1px solid black; background: white; }
-#body { padding-left: 10px;  width: 650px;  float: left; }
+#body { padding-left: 30px;  width: 650px;  float: left; }
 #right_column { min-height: 500px; width: 253px; padding-left: 15px; padding-top: 25px;  border-left: 1px solid black;  float: right;}
 
 #content #show_item img { display: block; }
