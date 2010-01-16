@@ -1338,3 +1338,11 @@ Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:22:35) [G
 Rendering template within layouts/application
 Rendering registrations/new
 Completed in 30ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2010-01-17 03:25:23) [GET]
+Rendering template within layouts/application
+Rendering registrations/new
+Completed in 35ms (View: 23, DB: 0) | 200 OK [http://localhost/]
