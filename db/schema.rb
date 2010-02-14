@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100110021111) do
+ActiveRecord::Schema.define(:version => 20100214103727) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,23 @@ ActiveRecord::Schema.define(:version => 20100110021111) do
     t.integer  "commitment_strength"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                               :null => false
+    t.string   "name"
+    t.string   "email",                               :null => false
+    t.string   "crypted_password",    :default => "", :null => false
+    t.string   "password_salt",       :default => "", :null => false
+    t.string   "persistence_token",   :default => "", :null => false
+    t.string   "single_access_token", :default => "", :null => false
+    t.string   "perishable_token",    :default => "", :null => false
+    t.integer  "login_count",         :default => 0,  :null => false
+    t.integer  "failed_login_count",  :default => 0,  :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.boolean  "admin"
   end
 
 end

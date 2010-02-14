@@ -1,0 +1,9 @@
+<tr >
+  <td><%= registration.name if registration.name %></td>
+  <td><%= registration.organisation if registration.organisation %></td>
+  <td><%= registration.os if registration.os %></td>
+  <td><%= registration.help if registration.help %></td>
+  <td><%= registration.email if registration.email %></td>
+  <td><%= registration.comment if registration.comment %></td>
+  <td><%= link_to "delete", :controller => "admin/registrations", :action => :delete, :id => registration.id %></td>
+</tr>
