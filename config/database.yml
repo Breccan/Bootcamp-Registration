@@ -3,8 +3,8 @@
 development:
   adapter: postgresql
   database: event_manager_dev
-  username: event_manager
-  password: event_manager
+  username: development
+  password: development
 
 
 # Warning: The database defined as "test" will be erased and
