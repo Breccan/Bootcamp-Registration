@@ -3,6 +3,7 @@
   <h3> No one registered yet. <%= link_to "Be the first!", new_registration_path %> </h3>
 <% else %>
   <h3> The following people have already registered </h3>
+  <h5> There are only <%= @remaining %> spots left, don't miss out! <h5>
   <table>
     <tr> 
       <th> Name </th>
