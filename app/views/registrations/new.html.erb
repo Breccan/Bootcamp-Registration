@@ -41,28 +41,3 @@
   <br />
 </div>
 
-<div class="register">
-  <h3> Register now! </h3>
-<%form_for @registration, :method => :post do |f| %>
-
-  <p>  <%= f.label :name, "Name:" %> 
-  <%= f.text_field :name %></p.>
-
-  <p><%= f.label :email, "Email:" %>
-  <%= f.text_field :email %></p>
-
-
-  <p><%= f.label :help, "Do you need help setting up Rails on your Machine?" %> </p>
-  <p>Yes <%= f.radio_button :help, "yes" %> 
-  No <%= f.radio_button :help, "no" %></p>
-
-  <p><%= f.label :os, "What OS are you using?" %>
-  <%= f.text_field :os %></p>
-  
-  <p><%= f.label :comment, "Any particular interests or requests?:" %></p>
-  <p><%= f.text_area :comment, :rows => 7, :cols => 80 %> </p>
-
-  <p><%= submit_tag %></p>
-
-<% end %>
-</div>
